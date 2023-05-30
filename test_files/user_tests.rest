@@ -1,0 +1,65 @@
+### runs an auth check on a user's email to see if their current token is valid and/or expired
+GET https://bk-test-hef9.onrender.com/users/auth-check/tommyTo@yahoo.com HTTP/1.1
+
+
+### Create a User
+POST https://bk-test-hef9.onrender.com/users HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "userID" : "tommyTom@yahoo.com",
+    "username" : "Tommy Tommerson",
+    "password": "1234asdfkjhq",
+    "canRepair" : true,
+    "banned" : false,
+    "privilege" : "User"
+}
+
+### login as User
+POST https://bk-test-hef9.onrender.com/users/login HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "userID" : "tommyTo@yahoo.com",
+    "password": "1234asdfkjhq"
+}
+
+### logout as User
+POST https://bk-test-hef9.onrender.com/users/logout HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "userID" : "tommyTo@yahoo.com"
+}
+
+### Get all users
+GET https://bk-test-hef9.onrender.com/users HTTP/1.1
+
+### Get a user by Id
+GET https://bk-test-hef9.onrender.com/users/6452f24d42d759fc75eaddaf HTTP/1.1
+
+
+### Update a user's information
+PUT https://bk-test-hef9.onrender.com/users/6452f24d42d759fc75eaddaf HTTP/1.1
+Content-Type: application/json
+
+{
+   "userID" : "billy@yahoo.com",
+    "username" : "billy billerson yay",
+    "canRepair" : true,
+    "banned" : false,
+    "privilege" : "User",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOiIxaCIsImlhdCI6MTY4MzE1NzQ2N30.rAKsKFrWggi9HPmBklU8k-k4Ce2XtOgbrUrgU7YoqbM"
+}
+
+###Delete a user
+DELETE https://bk-test-hef9.onrender.com/users/644ae76e9c753760a56fbb55 HTTP/1.1
+
+### Send Email
+POST https://backend-of-bike-kollective.onrender.com/users/email HTTP/1.1
+Content-Type: application/json
+
+{
+    "userID" : "augusttannouri@gmail.com",
+    "username" : "August"
+}

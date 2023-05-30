@@ -1,0 +1,57 @@
+
+### Create a Bike
+POST https://bk-test-hef9.onrender.com/bikes HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "ownerID": "6447111b1be67793b7922789",
+    "userID": null,
+    "image": "https://i.imgur.com/SEXaS1b.jpeg",
+    "lat": 38.8951,
+    "lon": -77.0364, 
+    "bikeType": "Fixed Gear",
+    "timeOut": 4,
+    "totalStars": 22,
+    "lockCombination": 1935,
+    "timesUsed": 3,
+    "outOfService": false,
+    "missing": false, 
+    "badPw": false,
+    "noLock": false,
+    "gearIssue": false,
+    "flatTire": false,
+    "structuralDamage": false
+}
+
+### Get all bikes
+GET https://bk-test-hef9.onrender.com/bikes HTTP/1.1
+
+### Get a bike by Id
+GET https://bk-test-hef9.onrender.com/bikes/644a98bfd0437b50dcaffec6 HTTP/1.1
+
+### Update a bike's information
+PUT https://bk-test-hef9.onrender.com/bikes/644a942d7ef43db84c57d1d7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "ownerID": "6444333b1be67793b7922286",
+    "userID": "6447111b1be67793b7922788",
+    "image": "https://i.imgur.com/SEXaS1b.jpeg",
+    "lat": 38.8951,
+    "lon": -77.0364, 
+    "bikeType": "Road",
+    "timeOut": 4,
+    "totalStars": 22,
+    "lockCombination": 1935,
+    "timesUsed": 3,
+    "outOfService": false,
+    "missing": false, 
+    "badPw": false,
+    "noLock": false,
+    "gearIssue": false,
+    "flatTire": false,
+    "structuralDamage": false
+}
+
+###Delete a bike
+DELETE https://bk-test-hef9.onrender.com/bikes/644ae7159c753760a56fbb4b HTTP/1.1
